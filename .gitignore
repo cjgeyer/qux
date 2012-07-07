@@ -1,0 +1,9 @@
+*.pdf
+*.dvi
+*.aux
+*.log
+*.o
+*.so
+*.rds
+*.Rout
+*.Rcheck

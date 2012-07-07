@@ -1,0 +1,46 @@
+
+R version 2.9.0 (2009-04-17)
+Copyright (C) 2009 The R Foundation for Statistical Computing
+ISBN 3-900051-07-0
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> 
+>  library(qux)
+> 
+>  qux(log2, 1:5)
+[1] 0.000000 1.000000 1.584963 2.000000 2.321928
+> 
+>  try(qux(log2, 0:5))
+Error in qux(log2, 0:5) : 
+  function returned vector with non-finite element
+> 
+>  fred <- function(x, y) x / y
+> 
+>  qux(fred, 1:5, y = 1:5)
+[1] 1 1 1 1 1
+> 
+>  try(qux(fred, 0:5, y = 0:5))
+Error in qux(fred, 0:5, y = 0:5) : 
+  function returned vector with non-finite element
+> 
+>  y <- 1:5
+>  fred <- function(x) x / y
+>  qux(fred, 1:5)
+[1] 1 1 1 1 1
+> 
+>  sally <- function(x) list(x, x^2)
+>  try(qux(sally, 1:5))
+Error in qux(sally, 1:5) : result of function call must be atomic
+> 
+> 

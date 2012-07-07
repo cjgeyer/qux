@@ -1,0 +1,5 @@
+useDynLib(qux)
+
+export(qux)
+export(quacks)
+

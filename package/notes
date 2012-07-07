@@ -1,0 +1,2 @@
+rm -f qux/src/*.{o,so,rds}
+R CMD check qux
