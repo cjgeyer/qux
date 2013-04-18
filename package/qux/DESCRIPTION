@@ -1,9 +1,9 @@
 Package: qux
-Version: 0.1
-Date: 2009-10-31
-Title: Calling R from C
+Version: 0.2
+Date: 2013-04-17
+Title: Calling R from C and from Fortran
 Author: Charles J. Geyer <charlie@stat.umn.edu>.
 Maintainer: Charles J. Geyer <charlie@stat.umn.edu>
-Depends: R (>= 2.4.1)
+Depends: R (>= 2.6.0)
 Description: what it says
 License: Unlimited
