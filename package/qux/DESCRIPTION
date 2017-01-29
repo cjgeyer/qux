@@ -1,6 +1,6 @@
 Package: qux
 Version: 0.3
-Date: 2015-07-01
+Date: 2017-01-29
 Title: Demo Calling R from C or Fortran Called from R
 Author: Charles J. Geyer <charlie@stat.umn.edu>.
 Maintainer: Charles J. Geyer <charlie@stat.umn.edu>
