@@ -1,3 +1,18 @@
+# if any version numbers have changed
+rm -f qux*.tar.gz
+
+# the following works to turn on extra compiler flags for checking package qux
 export PKG_CFLAGS="-Wall -Wextra"
+
 R CMD build qux
 R CMD check qux_*.tar.gz
+
+# if changes to C or Fortran code are made
+R CMD check qux_*.tar.gz --use-valgrind
+# then
+R CMD check qux_*.tar.gz --use-valgrind
+grep "ERROR SUMMARY" qux.Rcheck/00check.log
+grep "ERROR SUMMARY" qux.Rcheck/qux-Ex.Rout
+grep "definitely lost:" qux.Rcheck/00check.log
+grep "definitely lost:" qux.Rcheck/qux-Ex.Rout
+# should show no errors and no definitely lost
