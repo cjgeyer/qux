@@ -1,3 +1,3 @@
-export PKG_CFLAGS="-W -Wall -Wextra"
+export PKG_CFLAGS="-Wall -Wextra"
 R CMD build qux
 R CMD check qux_*.tar.gz

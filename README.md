@@ -1,11 +1,14 @@
-Demo R package.  Shows how to call R from C using either
+Demo R package.  Shows how to call R from C
 
 * `.Call` to get to C from R and `eval` to call R from C
 
+It used to show how to use
+
 * `.C` to get to C from R and `call_R` to call R from C
 
-Note the latter is deprecated since R-2.15.0 but still works
-(at least for a while).
+but the latter, which had been deprecated since R-2.15.0, was finally
+removed from the R API in R-4.2.0.  It can no longer be used
+and has been removed from this package.
 
 Also shows how to call R from Fortran (via C function pretending
 to be Fortran subroutine).
