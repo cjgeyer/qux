@@ -1,10 +1,10 @@
 Package: qux
-Version: 0.5
-Date: 2024-01-23
+Version: 0.6
+Date: 2024-02-16
 Title: Demo Calling R from C or Fortran Called from R
 Author: Charles J. Geyer <geyer@umn.edu>.
 Maintainer: Charles J. Geyer <geyer@umn.edu>
-Depends: R (>= 2.10.0)
+Depends: R (>= 3.0.2)
 Description: This is a demo package for statistical computing classes
    that illustrates calling R functions from inside C or Fortran that
    has in turn been called from R using .Call or .Fortran.

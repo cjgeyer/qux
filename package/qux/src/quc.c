@@ -1,6 +1,7 @@
 
 #include <R.h>
 #include <Rinternals.h>
+#include <stdarg.h>
 
 static SEXP thefunction = NULL;
 static SEXP theenvironment = NULL;
@@ -16,11 +17,17 @@ SEXP setupfunction(SEXP func, SEXP rho)
     return(ScalarLogical(TRUE));
 }
 
+static void teardownfunction()
+{
+    thefunction = R_NilValue;
+    theenvironment = R_NilValue;
+}
+
 double F77_SUB(doit)(double *x, int *n)
 {
-    if (! isFunction(thefunction))
+    if ((! thefunction) || (! isFunction(thefunction)))
         error("setupfunction needs to be called first");
-    if (! isEnvironment(theenvironment))
+    if ((! theenvironment) || (! isEnvironment(theenvironment)))
         error("setupfunction needs to be called first");
 
     SEXP state;
@@ -31,6 +38,7 @@ double F77_SUB(doit)(double *x, int *n)
     SEXP call, result;
     PROTECT(call = lang2(thefunction, state));
     PROTECT(result = eval(call, theenvironment));
+    teardownfunction();
 
     if (! isVectorAtomic(result))
         error("result of function call must be atomic");
